@@ -83,7 +83,7 @@ def run_and_save(pipe):
                 json.dump(data, outfile, ensure_ascii=False)
                 outfile.write('\n')
 
-    dataset = load_dataset('MMMU/MMMU_Pro', SETTING, split='test')
+    dataset = load_dataset('MMMU_Pro', SETTING, split='test')
 
     # Process and save dataset parts
     def process_and_save_part(part_data, part_name, pipe):
