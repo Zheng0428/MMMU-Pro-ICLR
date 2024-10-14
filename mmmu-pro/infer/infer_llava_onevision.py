@@ -86,7 +86,7 @@ def save_results_to_file(results, output_path):
             outfile.write('\n')
 
 def run_and_save():
-    dataset = load_dataset('MMMU/MMMU_Pro', SETTING, split='test')
+    dataset = load_dataset('MMMU_Pro', SETTING, split='test')
 
     def process_and_save_part(part_data, part_name):
         print(f"Begin processing {part_name}")
