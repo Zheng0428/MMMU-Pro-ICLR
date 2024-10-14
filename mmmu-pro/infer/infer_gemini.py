@@ -140,7 +140,7 @@ def run_and_save():
                 json.dump(data, outfile, ensure_ascii=False)
                 outfile.write('\n')
 
-    dataset = load_dataset('MMMU/MMMU_Pro', SETTING, split='test')
+    dataset = load_dataset('MMMU_Pro', SETTING, split='test')
     # Load model components
     model = load_gemini_model(API_KEY)
 
