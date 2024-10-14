@@ -181,7 +181,7 @@ def run_and_save():
                 json.dump(data, outfile, ensure_ascii=False)
                 outfile.write('\n')
     
-    dataset = load_dataset('MMMU/MMMU_Pro', SETTING, split='test')
+    dataset = load_dataset('MMMU_Pro', SETTING, split='test')
     model_components = load_model(model_name='GPT4O-MINI', base_url="https://api.openai.com/v1", api_key=API_KEY, model=MODEL)
     
     def process_and_save_part(part_data, part_name, model_components):
