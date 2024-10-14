@@ -87,7 +87,6 @@ def mmmu_aggregate_results(results):
 
 def calculate_ins_level_acc(results):
     """Calculate the instruction level accuracy for given Subject results
-    https://github.com/MMMU-Benchmark/MMMU/blob/51ce7f3e829c16bb44bc5445782686b4c3508794/eval/eval_utils.py#L246
     """
     acc = 0
     ins_num = 0
@@ -137,7 +136,6 @@ DOMAIN_CAT2SUB_CAT = {
 def eval_multi_choice(gold_i, pred_i):
     """
     Evaluate a multiple choice instance.
-    https://github.com/MMMU-Benchmark/MMMU/blob/51ce7f3e829c16bb44bc5445782686b4c3508794/eval/eval_utils.py#L175
     """
     correct = False
     # only they are exactly the same, we consider it as correct
@@ -155,7 +153,6 @@ def eval_multi_choice(gold_i, pred_i):
 def eval_open(gold_i, pred_i):
     """
     Evaluate an open question instance
-    https://github.com/MMMU-Benchmark/MMMU/blob/51ce7f3e829c16bb44bc5445782686b4c3508794/eval/eval_utils.py#L191
     """
     correct = False
     if isinstance(gold_i, list):
@@ -184,7 +181,6 @@ def eval_open(gold_i, pred_i):
 def evaluate_mmmu(samples):
     """
     Batch evaluation for multiple choice and open questions.
-    https://github.com/MMMU-Benchmark/MMMU/blob/51ce7f3e829c16bb44bc5445782686b4c3508794/eval/eval_utils.py#L219
     """
     pred_correct = 0
     judge_dict = dict()
@@ -214,7 +210,6 @@ def parse_multi_choice_response(response, all_choices, index2ans):
     """
     Parse the prediction from the generated response.
     Return the predicted index, e.g., A, B, C, D.
-    https://github.com/MMMU-Benchmark/MMMU/blob/51ce7f3e829c16bb44bc5445782686b4c3508794/eval/eval_utils.py#L10
     """
     last_answer_pos = response.rfind("Answer:")
     if last_answer_pos != -1:
@@ -292,7 +287,6 @@ def parse_multi_choice_response(response, all_choices, index2ans):
 def extract_numbers(string):
     """
     Exact all forms of numbers from a string with regex.
-    https://github.com/MMMU-Benchmark/MMMU/blob/51ce7f3e829c16bb44bc5445782686b4c3508794/eval/eval_utils.py#L100
     """
     # Pattern for numbers with commas
     pattern_commas = r"-?\b\d{1,3}(?:,\d{3})+\b"
@@ -316,7 +310,6 @@ def extract_numbers(string):
 def check_is_number(string):
     """
     Check if the given string a number.
-    https://github.com/MMMU-Benchmark/MMMU/blob/51ce7f3e829c16bb44bc5445782686b4c3508794/eval/eval_utils.py#L65
     """
     try:
         float(string.replace(",", ""))
@@ -329,7 +322,6 @@ def check_is_number(string):
 def normalize_str(string):
     """
     Normalize the str to lower case and make them float numbers if possible.
-    https://github.com/MMMU-Benchmark/MMMU/blob/51ce7f3e829c16bb44bc5445782686b4c3508794/eval/eval_utils.py#L76
     """
     # check if characters in the string
 
@@ -356,7 +348,6 @@ def parse_open_response(response):
     """
     Parse the prediction from the generated response.
     Return a list of predicted strings or numbers.
-    https://github.com/MMMU-Benchmark/MMMU/blob/51ce7f3e829c16bb44bc5445782686b4c3508794/eval/eval_utils.py#L122
     """
 
     # content = content.strip("\n").strip(".").strip(" ")
@@ -428,7 +419,6 @@ def get_multi_choice_info(options):
     """
     Given the list of options for multiple choice question
     Return the index2ans and all_choices
-    https://github.com/MMMU-Benchmark/MMMU/blob/51ce7f3e829c16bb44bc5445782686b4c3508794/eval/data_utils.py#L54
     """
 
     start_chr = "A"
